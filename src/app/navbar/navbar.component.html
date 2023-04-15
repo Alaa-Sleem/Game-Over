@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-sm navbar-dark shadow pointer ">
+  <div class="container">
+  <div class="w-25">
+    <a class="navbar-brand "routerLink="home">
+        <img class="w-25"src="./assets/imges/logo.png" alt="">
+        Game over
+    </a>
+
+  </div>
+    <div class="collapse navbar-collapse " id="collapsibleNavId">
+        <ul class="navbar-nav me-auto mt-2  mt-lg-0">
+            <li *ngIf="IsLogin"  class="nav-item">
+                <a  class="nav-link active" routerLink="home" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+            </li>
+          
+            <li *ngIf="IsLogin"  class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">sortby</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a *ngFor="let sort of sortby" [routerLink]="['/sortby',sort] " class="dropdown-item">{{sort}}</a>
+                   
+
+                </div>
+            </li>
+            <li *ngIf="IsLogin"  class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">platforms</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a *ngFor="let plat of platforming" [routerLink]="['./platforms',plat] " class="dropdown-item">{{plat}}</a>
+                </div>
+            </li>
+            <li   class="nav-item dropdown">
+                <li *ngIf="IsLogin" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">categories</a>
+                    <div   class="text-lowercase dropdown-menu"aria-labelledby="dropdownId">
+                        <a *ngFor="let cat of categories" [routerLink]="['/catrgories',cat.trim()] " class="dropdown-item">{{cat}}</a>
+                        
+                    </div>
+                </li>
+               
+           
+
+        </ul>
+
+        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+              
+            <li *ngIf="!IsLogin" class="nav-item">
+                <a class="nav-link" routerLink="signin">Login</a>
+            </li>
+            <li *ngIf="!IsLogin"  class="nav-item">
+                <a class="nav-link" routerLink="signup">Register</a>
+            </li>
+            <li *ngIf="IsLogin"   class="nav-item ">
+                <a (click)="LogOut()" class="nav-link   cursor-pointer">LogOut</a>
+            </li>
+         
+        </ul>
+    
+    </div>
+
+  </div>
+</nav>

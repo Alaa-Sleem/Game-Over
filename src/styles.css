@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+
+body
+{
+    background-color:#272b30;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+
+    
+}
+
+input
+{
+    color: #fff!important;
+}
+
+.imge{
+   background-image: url(./assets/imges/paladins.b44d33d6e7ee1ba8.png);
+   background-repeat: no-repeat;
+    background-color: #1c1e22;
+    background-position: top;
+    background-size: contain;
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0,0,0,.6);
+    padding: 4rem 2rem;
+    
+}
+
+.grow
+{
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+.grow:hover
+{
+    transform: scale(1.03);
+}
+.description
+{
+    line-height: 30px;
+    font-size: 20px;
+}
+
+.pointer
+{
+    cursor: pointer;
+}
+
+ 

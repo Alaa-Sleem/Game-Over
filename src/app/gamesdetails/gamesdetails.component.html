@@ -1,0 +1,71 @@
+<section >  
+    <div class="container">
+        <div class="row" >
+            <div class="gamedetails d-flex m-4">
+                <div class="col-md-3 m-4 ">
+                    <div class="img card  bg-dark">
+                    <img class="card-img p-4 rounded-3" src={{gamesdetails?.thumbnail}} alt="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-baseline justify-content-between ">
+                            <span class="btn btn-dark mb-3 py-2  shadow ">Free</span>
+                            <a type="button" target="_blank" class="bg-primary  rounded-3 " href={{gamesdetails?.game_url}} >
+                                <button class="btn text-white px-5 w-100 ">
+                                    <strong class="text-center p-2" >PLAY NOW </strong>
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </button>
+                            </a>
+                        </div>
+    
+                    </div>
+    
+                    </div>
+             
+                </div>
+                <div class="col-md-8">
+                   <div class="container">
+                    <div class="about text-muted">
+                        <h1>{{gamesdetails?.title}}</h1>
+                        <span>About{{gamesdetails?.title}}</span>
+                        <p class="description">{{gamesdetails?.description}}</p>
+                        <div class="rounded-1 ">
+                            <h4>{{gamesdetails?.title}} screenshot</h4>
+                          <img class="img-fluid" src={{gamesdetails?.screenshots[0].image}} alt="">
+                        </div>
+
+                        <div class="">
+                          <h3>Additional Information</h3>
+                          <div class="d-flex justify-content-between">
+                            <div>
+                                <h5>Title</h5>
+                                <span>{{gamesdetails?.title}}</span>
+                                <h5>Release Date</h5>
+                                <span>{{gamesdetails?.release_date}}</span>
+                            </div>
+                            <div>
+                                
+                                <p>Developer</p>
+                                <span>{{gamesdetails?.developer}}</span>
+                                <h5>Genre</h5>
+                                <span>{{gamesdetails?.genre}}</span>
+                            </div>
+                            <div>
+                                <h5>Publisher</h5>
+                                <span>{{gamesdetails?.publisher}}</span>
+                                <h5>platform</h5>
+                                <span>{{gamesdetails?.platform}}</span>
+                            </div>
+
+                          </div>
+                        </div>
+    
+                    </div>
+                   </div>
+                </div>
+            </div>
+    
+        </div>
+    
+      </div>
+</section>
+
+

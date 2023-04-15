@@ -1,0 +1,82 @@
+<div class="container  p-lg-5">
+    <div class="row shadow">
+        <div class="photo  col-md-6 ">
+            <img class="w-100" src="./assets/imges/gaming.ebaf2ffc84f4451d.jpg" alt="">
+ 
+        </div>
+        <div class="col-md-6">
+                <div class="container  text-center p-4">
+                    <h4 class="text-muted"> Create My Account</h4>
+                    <div *ngIf="ApiError" class="alert w-100 alert-success">
+                        {{ApiError}}
+                    </div>
+                    <form (ngSubmit)="handeRegister(registerForm)" [formGroup]="registerForm">
+                       <div class="d-flex justify-content-between ">
+                        <input formControlName="name" type="text" placeholder="Frist-Name"  class="m-2 bg-black form-control">
+                        <div *ngIf="registerForm.get('name')?.errors &&registerForm.get('name')?.touched" class="m-0 alert alert-danger">
+                            <p *ngIf="registerForm.get('name')?.getError('required')" >required</p>
+                            <p *ngIf="registerForm.get('name')?.getError('minlength')">minlength is 2</p>
+                            <p *ngIf="registerForm.get('name')?.getError('maxlength')">maxlength is 10</p>
+                        
+                        </div>
+                        <input type="text" placeholder="Last-Name"  class=" m-2 bg-black form-control">
+                        <div *ngIf="registerForm.get('name')?.errors &&registerForm.get('name')?.touched " class="m-0 alert alert-danger">
+                            <p *ngIf="registerForm.get('name')?.getError('required')" >required</p>
+                            <p *ngIf="registerForm.get('name')?.getError('minlength')">minlength is 2</p>
+                            <p *ngIf="registerForm.get('name')?.getError('maxlength')">maxlength is 10</p>
+                        
+                        </div>
+                       </div>
+                       <input formControlName="email" type="email" placeholder="Email" class="m-2 bg-black form-control">
+                       <div *ngIf="registerForm.get('email')?.errors &&registerForm.get('email')?.touched " class="m-0 alert alert-danger">
+                        <p *ngIf="registerForm.get('email')?.getError('required')" >required</p>
+                        <p *ngIf="registerForm.get('email')?.getError('email')"> Invalid Email</p>
+                       
+                    
+                    </div>
+                       <input formControlName="phone" type="tel" placeholder="phone" class="m-2 bg-black form-control">
+                       <div *ngIf="registerForm.get('phone')?.errors &&registerForm.get('phone')?.touched " class="m-0 alert alert-danger">
+                        <p *ngIf="registerForm.get('phone')?.getError('required')" >required</p>
+                        <p *ngIf="registerForm.get('phone')?.getError('pattern')">invalid phone number</p>
+                    
+                    </div>
+
+                   
+                       
+                       <input formControlName="password" type="password" placeholder="password" class="m-2 bg-black form-control">
+                       <div *ngIf="registerForm.get('password')?.errors &&registerForm.get('password')?.touched " class="m-0 alert alert-danger">
+                        <p *ngIf="registerForm.get('password')?.getError('required')" >required</p>
+                        <p *ngIf="registerForm.get('password')?.getError('pattern')">must contain uppercase & any special char</p>
+                    
+                    </div>
+
+                    <input formControlName="rePassword" class="m-2 bg-black form-control " placeholder="rePassword" type="Password">
+                    <div *ngIf="registerForm.get('rePassword')?.errors &&registerForm.get('rePassword')?.touched " class="alert alert-danger">
+                        <p *ngIf="registerForm.get('rePassword')?.getError('required')" >required</p>
+                        <p *ngIf="registerForm.get('rePassword')?.getError('pattern')">must contain uppercase & any special char</p>
+                    
+                    </div>
+
+                       <button [disabled]="registerForm.invalid" class="btn btn-dark w-100 m-3 text-muted" >
+                        <i *ngIf="IsLoading" class="fas fa-spinner fa-spin"></i>
+                        <span *ngIf="!IsLoading"> Create Account</span>
+                    </button>
+
+                       <a class="text-muted text-decoration-none" href="https://policies.google.com/privacy">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</a>
+                       <hr>
+                       <a class="text-muted text-decoration-none" href="">Already a memeber? <a routerLink="/signin">login</a>
+                    </a>
+                    </form>
+  
+
+                </div>
+            
+                
+            </div>
+            
+
+       
+    </div>
+
+</div>
+
